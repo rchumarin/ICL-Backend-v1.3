@@ -49,8 +49,7 @@ public class myFilter implements Filter {
         }  
         
         HttpSession session = request.getSession(true);        
-        String name = (String) session.getAttribute("name");                        
-        //String name = (String) request.getServletContext().getAttribute("name");                                                                       
+        String name = (String) session.getAttribute("name");                               
         System.out.println(name);
         String msg = request.getParameter("msg");    
         String id = session.getId();

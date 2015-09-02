@@ -79,12 +79,12 @@ public class WriteMessage extends HttpServlet {
             //jsonOb.keySet() возвращает набор, состоящий из id
             Iterator interatorKey = jsonOb.keySet().iterator();
             //проверка
-            System.out.println("2) " + jsonOb.keySet());
+            //System.out.println("2) " + jsonOb.keySet());
             
             //jsonOb.values() возвращает коллекцию, состоящую из msg и name
             Iterator<JSONObject> iteratorValue = jsonOb.values().iterator();            
             //проверка
-            System.out.println("3) " + jsonOb.values());
+            //System.out.println("3) " + jsonOb.values());
 
             while (iteratorValue.hasNext() || interatorKey.hasNext()) {
                 String jsonIdValue = (String) interatorKey.next();                                                                
