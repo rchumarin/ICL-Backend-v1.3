@@ -1,4 +1,5 @@
 <%--@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" --%>
+<%@page import="ru.icl.test.auth.username" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <html>
     <head>
@@ -8,13 +9,13 @@
     </head>    
     <body>
     <%
-            request.setCharacterEncoding("UTF-8");            
-            if (!request.getParameter("name").isEmpty()) {
-                String name = request.getParameter("name");
+            request.setCharacterEncoding("UTF-8");  
+            username un = new username();            
+            if (!request.getParameter("name").isEmpty()) {                
                 session.setAttribute("name", request.getParameter("name"));
             }
             else { 
-                session.setAttribute("name", "AnonimousGuest");
+                session.setAttribute("name", un.getName());
             }             
     %>            
     <div class="container">        
@@ -25,7 +26,7 @@
                 <h3>Онлайн ЧАТ</h3>
             </div>
             <div class="welcome">
-                <h5>Добро пожаловать, <%=session.getAttribute("name")%> !</h5>
+                <h5>Добро пожаловать, <%=session.getAttribute("name")%>!</h5>
                 <h5 class="sessia">Ваш id: <%=session.getId()%></h5>
                 <h6><a href="../index.jsp">Выход</a></h6>
             </div>
